@@ -1,4 +1,4 @@
-# Rick and Morty Info
+# My Personal Hero
 
 [![Flutter version](https://img.shields.io/badge/flutter-v1.22.5-blue?logo=flutter)](https://flutter.dev/docs/development/tools/sdk/releases)
 [![style: effective dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://github.com/tenhobi/effective_dart)
@@ -16,3 +16,6 @@ A simple app to demonstrate Clean Architecture my way.
 ## Screenshots
 
 - [Soon] 
+
+## Thanks
+- Special thanks to [Yoann Cribier](https://github.com/akabab) for creating [superhero-api](https://github.com/akabab/superhero-api), a great API to find informations about popular heroes.

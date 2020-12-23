@@ -1,0 +1,18 @@
+include: package:effective_dart/analysis_options.yaml
+
+analyzer:
+  enable-experiment:
+    - non-nullable
+    - extension-methods
+
+  exclude:
+    - lib/**/**/*.freezed.dart
+    - lib/**/**/*.g.dart
+
+  errors:
+    missing_return: error
+    avoid_print: warning
+    public_member_api_docs: ignore
+    lines_longer_than_80_chars: ignore
+    one_member_abstracts: ignore
+    constant_identifier_names: ignore

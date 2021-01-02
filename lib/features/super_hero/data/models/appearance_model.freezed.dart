@@ -1,27 +1,37 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'appearance.dart';
+part of 'appearance_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+AppearanceModel _$AppearanceModelFromJson(Map<String, dynamic> json) {
+  return _AppearanceModel.fromJson(json);
+}
 
 /// @nodoc
-class _$AppearanceTearOff {
-  const _$AppearanceTearOff();
+class _$AppearanceModelTearOff {
+  const _$AppearanceModelTearOff();
 
 // ignore: unused_element
-  _Appearance call(
-      {@required GenderType gender,
-      String race,
-      @required List<String> height,
-      @required List<String> weight,
-      @required String eyeColor,
-      @required String hairColor}) {
-    return _Appearance(
+  _AppearanceModel call(
+      {@required
+      @JsonKey(fromJson: GenderTypeMapper.genderTypeFromString, toJson: GenderTypeMapper.genderTypeToString)
+          GenderType gender,
+      @JsonKey(nullable: true)
+          String race,
+      @required
+          List<String> height,
+      @required
+          List<String> weight,
+      @required
+          String eyeColor,
+      @required
+          String hairColor}) {
+    return _AppearanceModel(
       gender: gender,
       race: race,
       height: height,
@@ -30,32 +40,44 @@ class _$AppearanceTearOff {
       hairColor: hairColor,
     );
   }
+
+// ignore: unused_element
+  AppearanceModel fromJson(Map<String, Object> json) {
+    return AppearanceModel.fromJson(json);
+  }
 }
 
 /// @nodoc
 // ignore: unused_element
-const $Appearance = _$AppearanceTearOff();
+const $AppearanceModel = _$AppearanceModelTearOff();
 
 /// @nodoc
-mixin _$Appearance {
+mixin _$AppearanceModel {
+  @JsonKey(
+      fromJson: GenderTypeMapper.genderTypeFromString,
+      toJson: GenderTypeMapper.genderTypeToString)
   GenderType get gender;
+  @JsonKey(nullable: true)
   String get race;
   List<String> get height;
   List<String> get weight;
   String get eyeColor;
   String get hairColor;
 
-  $AppearanceCopyWith<Appearance> get copyWith;
+  Map<String, dynamic> toJson();
+  $AppearanceModelCopyWith<AppearanceModel> get copyWith;
 }
 
 /// @nodoc
-abstract class $AppearanceCopyWith<$Res> {
-  factory $AppearanceCopyWith(
-          Appearance value, $Res Function(Appearance) then) =
-      _$AppearanceCopyWithImpl<$Res>;
+abstract class $AppearanceModelCopyWith<$Res> {
+  factory $AppearanceModelCopyWith(
+          AppearanceModel value, $Res Function(AppearanceModel) then) =
+      _$AppearanceModelCopyWithImpl<$Res>;
   $Res call(
-      {GenderType gender,
-      String race,
+      {@JsonKey(fromJson: GenderTypeMapper.genderTypeFromString, toJson: GenderTypeMapper.genderTypeToString)
+          GenderType gender,
+      @JsonKey(nullable: true)
+          String race,
       List<String> height,
       List<String> weight,
       String eyeColor,
@@ -65,12 +87,13 @@ abstract class $AppearanceCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AppearanceCopyWithImpl<$Res> implements $AppearanceCopyWith<$Res> {
-  _$AppearanceCopyWithImpl(this._value, this._then);
+class _$AppearanceModelCopyWithImpl<$Res>
+    implements $AppearanceModelCopyWith<$Res> {
+  _$AppearanceModelCopyWithImpl(this._value, this._then);
 
-  final Appearance _value;
+  final AppearanceModel _value;
   // ignore: unused_field
-  final $Res Function(Appearance) _then;
+  final $Res Function(AppearanceModel) _then;
 
   @override
   $Res call({
@@ -103,14 +126,17 @@ class _$AppearanceCopyWithImpl<$Res> implements $AppearanceCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$AppearanceCopyWith<$Res> implements $AppearanceCopyWith<$Res> {
-  factory _$AppearanceCopyWith(
-          _Appearance value, $Res Function(_Appearance) then) =
-      __$AppearanceCopyWithImpl<$Res>;
+abstract class _$AppearanceModelCopyWith<$Res>
+    implements $AppearanceModelCopyWith<$Res> {
+  factory _$AppearanceModelCopyWith(
+          _AppearanceModel value, $Res Function(_AppearanceModel) then) =
+      __$AppearanceModelCopyWithImpl<$Res>;
   @override
   $Res call(
-      {GenderType gender,
-      String race,
+      {@JsonKey(fromJson: GenderTypeMapper.genderTypeFromString, toJson: GenderTypeMapper.genderTypeToString)
+          GenderType gender,
+      @JsonKey(nullable: true)
+          String race,
       List<String> height,
       List<String> weight,
       String eyeColor,
@@ -121,14 +147,15 @@ abstract class _$AppearanceCopyWith<$Res> implements $AppearanceCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$AppearanceCopyWithImpl<$Res> extends _$AppearanceCopyWithImpl<$Res>
-    implements _$AppearanceCopyWith<$Res> {
-  __$AppearanceCopyWithImpl(
-      _Appearance _value, $Res Function(_Appearance) _then)
-      : super(_value, (v) => _then(v as _Appearance));
+class __$AppearanceModelCopyWithImpl<$Res>
+    extends _$AppearanceModelCopyWithImpl<$Res>
+    implements _$AppearanceModelCopyWith<$Res> {
+  __$AppearanceModelCopyWithImpl(
+      _AppearanceModel _value, $Res Function(_AppearanceModel) _then)
+      : super(_value, (v) => _then(v as _AppearanceModel));
 
   @override
-  _Appearance get _value => super._value as _Appearance;
+  _AppearanceModel get _value => super._value as _AppearanceModel;
 
   @override
   $Res call({
@@ -139,7 +166,7 @@ class __$AppearanceCopyWithImpl<$Res> extends _$AppearanceCopyWithImpl<$Res>
     Object eyeColor = freezed,
     Object hairColor = freezed,
   }) {
-    return _then(_Appearance(
+    return _then(_AppearanceModel(
       gender: gender == freezed ? _value.gender : gender as GenderType,
       race: race == freezed ? _value.race : race as String,
       height: height == freezed ? _value.height : height as List<String>,
@@ -150,24 +177,40 @@ class __$AppearanceCopyWithImpl<$Res> extends _$AppearanceCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
-class _$_Appearance implements _Appearance {
-  const _$_Appearance(
-      {@required this.gender,
-      this.race,
-      @required this.height,
-      @required this.weight,
-      @required this.eyeColor,
-      @required this.hairColor})
+class _$_AppearanceModel implements _AppearanceModel {
+  const _$_AppearanceModel(
+      {@required
+      @JsonKey(fromJson: GenderTypeMapper.genderTypeFromString, toJson: GenderTypeMapper.genderTypeToString)
+          this.gender,
+      @JsonKey(nullable: true)
+          this.race,
+      @required
+          this.height,
+      @required
+          this.weight,
+      @required
+          this.eyeColor,
+      @required
+          this.hairColor})
       : assert(gender != null),
         assert(height != null),
         assert(weight != null),
         assert(eyeColor != null),
         assert(hairColor != null);
 
+  factory _$_AppearanceModel.fromJson(Map<String, dynamic> json) =>
+      _$_$_AppearanceModelFromJson(json);
+
   @override
+  @JsonKey(
+      fromJson: GenderTypeMapper.genderTypeFromString,
+      toJson: GenderTypeMapper.genderTypeToString)
   final GenderType gender;
   @override
+  @JsonKey(nullable: true)
   final String race;
   @override
   final List<String> height;
@@ -180,13 +223,13 @@ class _$_Appearance implements _Appearance {
 
   @override
   String toString() {
-    return 'Appearance(gender: $gender, race: $race, height: $height, weight: $weight, eyeColor: $eyeColor, hairColor: $hairColor)';
+    return 'AppearanceModel(gender: $gender, race: $race, height: $height, weight: $weight, eyeColor: $eyeColor, hairColor: $hairColor)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Appearance &&
+        (other is _AppearanceModel &&
             (identical(other.gender, gender) ||
                 const DeepCollectionEquality().equals(other.gender, gender)) &&
             (identical(other.race, race) ||
@@ -214,22 +257,41 @@ class _$_Appearance implements _Appearance {
       const DeepCollectionEquality().hash(hairColor);
 
   @override
-  _$AppearanceCopyWith<_Appearance> get copyWith =>
-      __$AppearanceCopyWithImpl<_Appearance>(this, _$identity);
+  _$AppearanceModelCopyWith<_AppearanceModel> get copyWith =>
+      __$AppearanceModelCopyWithImpl<_AppearanceModel>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_AppearanceModelToJson(this);
+  }
 }
 
-abstract class _Appearance implements Appearance {
-  const factory _Appearance(
-      {@required GenderType gender,
-      String race,
-      @required List<String> height,
-      @required List<String> weight,
-      @required String eyeColor,
-      @required String hairColor}) = _$_Appearance;
+abstract class _AppearanceModel implements AppearanceModel {
+  const factory _AppearanceModel(
+      {@required
+      @JsonKey(fromJson: GenderTypeMapper.genderTypeFromString, toJson: GenderTypeMapper.genderTypeToString)
+          GenderType gender,
+      @JsonKey(nullable: true)
+          String race,
+      @required
+          List<String> height,
+      @required
+          List<String> weight,
+      @required
+          String eyeColor,
+      @required
+          String hairColor}) = _$_AppearanceModel;
+
+  factory _AppearanceModel.fromJson(Map<String, dynamic> json) =
+      _$_AppearanceModel.fromJson;
 
   @override
+  @JsonKey(
+      fromJson: GenderTypeMapper.genderTypeFromString,
+      toJson: GenderTypeMapper.genderTypeToString)
   GenderType get gender;
   @override
+  @JsonKey(nullable: true)
   String get race;
   @override
   List<String> get height;
@@ -240,5 +302,5 @@ abstract class _Appearance implements Appearance {
   @override
   String get hairColor;
   @override
-  _$AppearanceCopyWith<_Appearance> get copyWith;
+  _$AppearanceModelCopyWith<_AppearanceModel> get copyWith;
 }

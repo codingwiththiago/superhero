@@ -8,7 +8,7 @@ part 'appearance.freezed.dart';
 abstract class Appearance with _$Appearance {
   const factory Appearance({
     @required GenderType gender,
-    @required String race,
+    String race,
     @required List<String> height,
     @required List<String> weight,
     @required String eyeColor,

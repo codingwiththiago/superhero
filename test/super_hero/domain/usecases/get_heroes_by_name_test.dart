@@ -1,4 +1,4 @@
-import 'package:either_dart/either.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:my_personal_hero/features/super_hero/domain/entities/super_hero.dart';
@@ -24,7 +24,7 @@ void main() {
     //Act
     final result = await getHeroesByName('Callisto');
     //Assert
-    expect(result.isRight, true);
+    expect(result.isRight(), true);
     verify(mockSuperHeroRepository.getHeroesByName('Callisto'));
     verifyNoMoreInteractions(mockSuperHeroRepository);
   });

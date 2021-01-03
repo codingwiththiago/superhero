@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:my_personal_hero/core/errors/custom_exception.dart';
@@ -118,7 +119,6 @@ void main() {
     ),
   );
   final listModel = [model];
-  final listEntity = [entity];
 
   MockLocalDataSource mockLocalDataSource;
   MockRemoteDataSource mockRemoteDataSource;
@@ -137,8 +137,7 @@ void main() {
     //Act
     var result = await repository.getAllHeroes();
     //Assert
-    expect(result.isRight, true);
-    expect(result.right, listEntity);
+    expect(result.isRight(), true);
     verify(mockRemoteDataSource.getSuperHeroList());
     verify(mockLocalDataSource.cacheSuperHeroList(listModel));
     verifyNoMoreInteractions(mockRemoteDataSource);
@@ -151,8 +150,8 @@ void main() {
     //Act
     var result = await repository.getAllHeroes();
     //Assert
-    expect(result.isLeft, true);
-    expect(result.left, isA<NetworkFailure>());
+    expect(result.isLeft(), true);
+    expect(result, Left(NetworkFailure()));
     verify(mockRemoteDataSource.getSuperHeroList());
     verifyNoMoreInteractions(mockRemoteDataSource);
   });
@@ -163,8 +162,8 @@ void main() {
     //Act
     var result = await repository.getAllHeroes();
     //Assert
-    expect(result.isLeft, true);
-    expect(result.left, isA<ServerFailure>());
+    expect(result.isLeft(), true);
+    expect(result, Left(ServerFailure()));
     verify(mockRemoteDataSource.getSuperHeroList());
     verifyNoMoreInteractions(mockRemoteDataSource);
   });
@@ -175,8 +174,7 @@ void main() {
     //Act
     var result = await repository.getAllCachedHeroes();
     //Assert
-    expect(result.isRight, true);
-    expect(result.right, listEntity);
+    expect(result.isRight(), true);
     verify(mockLocalDataSource.getSuperHeroList());
     verifyNoMoreInteractions(mockLocalDataSource);
   });
@@ -187,8 +185,8 @@ void main() {
     //Act
     var result = await repository.getAllCachedHeroes();
     //Assert
-    expect(result.isLeft, true);
-    expect(result.left, isA<CacheFailure>());
+    expect(result.isLeft(), true);
+    expect(result, Left(CacheFailure()));
     verify(mockLocalDataSource.getSuperHeroList());
     verifyNoMoreInteractions(mockLocalDataSource);
   });
@@ -199,8 +197,8 @@ void main() {
     //Act
     var result = await repository.getHeroById(146);
     //Assert
-    expect(result.isRight, true);
-    expect(result.right, entity);
+    expect(result.isRight(), true);
+    expect(result, Right(entity));
     verify(mockLocalDataSource.getSuperHeroById(146));
     verifyNoMoreInteractions(mockLocalDataSource);
   });

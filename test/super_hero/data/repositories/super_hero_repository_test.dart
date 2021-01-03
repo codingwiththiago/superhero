@@ -1,4 +1,3 @@
-import 'package:either_dart/either.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:my_personal_hero/core/errors/custom_exception.dart';
@@ -23,9 +22,9 @@ import 'package:my_personal_hero/features/super_hero/domain/entities/power_stats
 import 'package:my_personal_hero/features/super_hero/domain/entities/super_hero.dart';
 import 'package:my_personal_hero/features/super_hero/domain/entities/work.dart';
 
-class MockLocalDataSource extends Mock implements SuperHeroLocalDataSource {}
+class MockLocalDataSource extends Mock implements ISuperHeroLocalDataSource {}
 
-class MockRemoteDataSource extends Mock implements SuperHeroRemoteDataSource {}
+class MockRemoteDataSource extends Mock implements ISuperHeroRemoteDataSource {}
 
 void main() {
   final entity = SuperHero(

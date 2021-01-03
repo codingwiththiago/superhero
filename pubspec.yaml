@@ -11,9 +11,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  connectivity: ^2.0.2
   cupertino_icons: ^1.0.0
   either_dart: ^0.0.5
   freezed_annotation: ^0.12.0
+  http: ^0.12.2
   json_serializable: ^3.5.1
 
 dev_dependencies:

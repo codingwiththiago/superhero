@@ -20,7 +20,7 @@ class _$BiographyTearOff {
       @required List<String> aliases,
       @required String birthPlace,
       @required String firstAppearance,
-      @required String publisher,
+      String publisher,
       @required AlignmentType alignment}) {
     return _Biography(
       name: name,
@@ -173,14 +173,13 @@ class _$_Biography implements _Biography {
       @required this.aliases,
       @required this.birthPlace,
       @required this.firstAppearance,
-      @required this.publisher,
+      this.publisher,
       @required this.alignment})
       : assert(name != null),
         assert(alterEgos != null),
         assert(aliases != null),
         assert(birthPlace != null),
         assert(firstAppearance != null),
-        assert(publisher != null),
         assert(alignment != null);
 
   @override
@@ -252,7 +251,7 @@ abstract class _Biography implements Biography {
       @required List<String> aliases,
       @required String birthPlace,
       @required String firstAppearance,
-      @required String publisher,
+      String publisher,
       @required AlignmentType alignment}) = _$_Biography;
 
   @override

@@ -15,7 +15,7 @@ abstract class BiographyModel with _$BiographyModel {
     @required List<String> aliases,
     @JsonKey(name: 'placeOfBirth') @required String birthPlace,
     @required String firstAppearance,
-    @required String publisher,
+    @JsonKey(nullable: true) String publisher,
     @JsonKey(fromJson: AlignmentTypeMapper.alignmentTypeFromString, toJson: AlignmentTypeMapper.alignmentTypeToString)
     @required
         AlignmentType alignment,

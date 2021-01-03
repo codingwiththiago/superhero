@@ -30,7 +30,7 @@ class _$BiographyModelTearOff {
           String birthPlace,
       @required
           String firstAppearance,
-      @required
+      @JsonKey(nullable: true)
           String publisher,
       @required
       @JsonKey(fromJson: AlignmentTypeMapper.alignmentTypeFromString, toJson: AlignmentTypeMapper.alignmentTypeToString)
@@ -65,6 +65,7 @@ mixin _$BiographyModel {
   @JsonKey(name: 'placeOfBirth')
   String get birthPlace;
   String get firstAppearance;
+  @JsonKey(nullable: true)
   String get publisher;
   @JsonKey(
       fromJson: AlignmentTypeMapper.alignmentTypeFromString,
@@ -88,7 +89,8 @@ abstract class $BiographyModelCopyWith<$Res> {
       @JsonKey(name: 'placeOfBirth')
           String birthPlace,
       String firstAppearance,
-      String publisher,
+      @JsonKey(nullable: true)
+          String publisher,
       @JsonKey(fromJson: AlignmentTypeMapper.alignmentTypeFromString, toJson: AlignmentTypeMapper.alignmentTypeToString)
           AlignmentType alignment});
 
@@ -155,7 +157,8 @@ abstract class _$BiographyModelCopyWith<$Res>
       @JsonKey(name: 'placeOfBirth')
           String birthPlace,
       String firstAppearance,
-      String publisher,
+      @JsonKey(nullable: true)
+          String publisher,
       @JsonKey(fromJson: AlignmentTypeMapper.alignmentTypeFromString, toJson: AlignmentTypeMapper.alignmentTypeToString)
           AlignmentType alignment});
 
@@ -217,7 +220,7 @@ class _$_BiographyModel implements _BiographyModel {
           this.birthPlace,
       @required
           this.firstAppearance,
-      @required
+      @JsonKey(nullable: true)
           this.publisher,
       @required
       @JsonKey(fromJson: AlignmentTypeMapper.alignmentTypeFromString, toJson: AlignmentTypeMapper.alignmentTypeToString)
@@ -227,7 +230,6 @@ class _$_BiographyModel implements _BiographyModel {
         assert(aliases != null),
         assert(birthPlace != null),
         assert(firstAppearance != null),
-        assert(publisher != null),
         assert(alignment != null);
 
   factory _$_BiographyModel.fromJson(Map<String, dynamic> json) =>
@@ -246,6 +248,7 @@ class _$_BiographyModel implements _BiographyModel {
   @override
   final String firstAppearance;
   @override
+  @JsonKey(nullable: true)
   final String publisher;
   @override
   @JsonKey(
@@ -319,7 +322,7 @@ abstract class _BiographyModel implements BiographyModel {
           String birthPlace,
       @required
           String firstAppearance,
-      @required
+      @JsonKey(nullable: true)
           String publisher,
       @required
       @JsonKey(fromJson: AlignmentTypeMapper.alignmentTypeFromString, toJson: AlignmentTypeMapper.alignmentTypeToString)
@@ -341,6 +344,7 @@ abstract class _BiographyModel implements BiographyModel {
   @override
   String get firstAppearance;
   @override
+  @JsonKey(nullable: true)
   String get publisher;
   @override
   @JsonKey(

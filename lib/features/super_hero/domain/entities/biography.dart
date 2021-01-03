@@ -12,7 +12,7 @@ abstract class Biography with _$Biography {
     @required List<String> aliases,
     @required String birthPlace,
     @required String firstAppearance,
-    @required String publisher,
+    String publisher,
     @required AlignmentType alignment,
   }) = _Biography;
 }

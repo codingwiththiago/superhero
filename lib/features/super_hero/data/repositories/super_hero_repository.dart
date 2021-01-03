@@ -11,8 +11,8 @@ import '../datasources/super_hero_remote_data_source.dart';
 import '../models/super_hero_model.dart';
 
 class SuperHeroRepository implements ISuperHeroRepository {
-  final SuperHeroLocalDataSource localDataSource;
-  final SuperHeroRemoteDataSource remoteDataSource;
+  final ISuperHeroLocalDataSource localDataSource;
+  final ISuperHeroRemoteDataSource remoteDataSource;
 
   SuperHeroRepository(this.localDataSource, this.remoteDataSource);
 

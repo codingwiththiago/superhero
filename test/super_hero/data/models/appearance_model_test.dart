@@ -8,18 +8,15 @@ import 'package:my_personal_hero/features/super_hero/domain/entities/appearance.
 import '../../../fixtures/fixture_reader.dart';
 
 void main() {
-  var entity = Appearance(
+  final entity = Appearance(
     gender: GenderType.female(),
     race: null,
     height: ['5\'9', '175 cm'],
-    weight: [
-      '165 lb',
-      '74 kg',
-    ],
+    weight: ['165 lb', '74 kg'],
     eyeColor: 'Blue',
     hairColor: 'Black',
   );
-  var model = AppearanceModel(
+  final model = AppearanceModel(
     gender: GenderType.female(),
     race: null,
     height: ['5\'9', '175 cm'],

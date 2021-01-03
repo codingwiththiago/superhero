@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:my_personal_hero/features/super_hero/domain/entities/power_stats.dart';
+
+import '../../domain/entities/power_stats.dart';
 
 part 'power_stats_model.freezed.dart';
 part 'power_stats_model.g.dart';

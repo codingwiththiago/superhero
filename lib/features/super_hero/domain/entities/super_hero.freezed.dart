@@ -23,7 +23,7 @@ class _$SuperHeroTearOff {
       @required Biography biography,
       @required Work work,
       @required Connections connections,
-      @required String imageUrl}) {
+      @required Images images}) {
     return _SuperHero(
       id: id,
       name: name,
@@ -33,7 +33,7 @@ class _$SuperHeroTearOff {
       biography: biography,
       work: work,
       connections: connections,
-      imageUrl: imageUrl,
+      images: images,
     );
   }
 }
@@ -52,7 +52,7 @@ mixin _$SuperHero {
   Biography get biography;
   Work get work;
   Connections get connections;
-  String get imageUrl;
+  Images get images;
 
   $SuperHeroCopyWith<SuperHero> get copyWith;
 }
@@ -70,13 +70,14 @@ abstract class $SuperHeroCopyWith<$Res> {
       Biography biography,
       Work work,
       Connections connections,
-      String imageUrl});
+      Images images});
 
   $PowerStatsCopyWith<$Res> get stats;
   $AppearanceCopyWith<$Res> get appearance;
   $BiographyCopyWith<$Res> get biography;
   $WorkCopyWith<$Res> get work;
   $ConnectionsCopyWith<$Res> get connections;
+  $ImagesCopyWith<$Res> get images;
 }
 
 /// @nodoc
@@ -97,7 +98,7 @@ class _$SuperHeroCopyWithImpl<$Res> implements $SuperHeroCopyWith<$Res> {
     Object biography = freezed,
     Object work = freezed,
     Object connections = freezed,
-    Object imageUrl = freezed,
+    Object images = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as int,
@@ -112,7 +113,7 @@ class _$SuperHeroCopyWithImpl<$Res> implements $SuperHeroCopyWith<$Res> {
       connections: connections == freezed
           ? _value.connections
           : connections as Connections,
-      imageUrl: imageUrl == freezed ? _value.imageUrl : imageUrl as String,
+      images: images == freezed ? _value.images : images as Images,
     ));
   }
 
@@ -165,6 +166,16 @@ class _$SuperHeroCopyWithImpl<$Res> implements $SuperHeroCopyWith<$Res> {
       return _then(_value.copyWith(connections: value));
     });
   }
+
+  @override
+  $ImagesCopyWith<$Res> get images {
+    if (_value.images == null) {
+      return null;
+    }
+    return $ImagesCopyWith<$Res>(_value.images, (value) {
+      return _then(_value.copyWith(images: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -182,7 +193,7 @@ abstract class _$SuperHeroCopyWith<$Res> implements $SuperHeroCopyWith<$Res> {
       Biography biography,
       Work work,
       Connections connections,
-      String imageUrl});
+      Images images});
 
   @override
   $PowerStatsCopyWith<$Res> get stats;
@@ -194,6 +205,8 @@ abstract class _$SuperHeroCopyWith<$Res> implements $SuperHeroCopyWith<$Res> {
   $WorkCopyWith<$Res> get work;
   @override
   $ConnectionsCopyWith<$Res> get connections;
+  @override
+  $ImagesCopyWith<$Res> get images;
 }
 
 /// @nodoc
@@ -215,7 +228,7 @@ class __$SuperHeroCopyWithImpl<$Res> extends _$SuperHeroCopyWithImpl<$Res>
     Object biography = freezed,
     Object work = freezed,
     Object connections = freezed,
-    Object imageUrl = freezed,
+    Object images = freezed,
   }) {
     return _then(_SuperHero(
       id: id == freezed ? _value.id : id as int,
@@ -230,7 +243,7 @@ class __$SuperHeroCopyWithImpl<$Res> extends _$SuperHeroCopyWithImpl<$Res>
       connections: connections == freezed
           ? _value.connections
           : connections as Connections,
-      imageUrl: imageUrl == freezed ? _value.imageUrl : imageUrl as String,
+      images: images == freezed ? _value.images : images as Images,
     ));
   }
 }
@@ -246,7 +259,7 @@ class _$_SuperHero implements _SuperHero {
       @required this.biography,
       @required this.work,
       @required this.connections,
-      @required this.imageUrl})
+      @required this.images})
       : assert(id != null),
         assert(name != null),
         assert(slug != null),
@@ -255,7 +268,7 @@ class _$_SuperHero implements _SuperHero {
         assert(biography != null),
         assert(work != null),
         assert(connections != null),
-        assert(imageUrl != null);
+        assert(images != null);
 
   @override
   final int id;
@@ -274,11 +287,11 @@ class _$_SuperHero implements _SuperHero {
   @override
   final Connections connections;
   @override
-  final String imageUrl;
+  final Images images;
 
   @override
   String toString() {
-    return 'SuperHero(id: $id, name: $name, slug: $slug, stats: $stats, appearance: $appearance, biography: $biography, work: $work, connections: $connections, imageUrl: $imageUrl)';
+    return 'SuperHero(id: $id, name: $name, slug: $slug, stats: $stats, appearance: $appearance, biography: $biography, work: $work, connections: $connections, images: $images)';
   }
 
   @override
@@ -304,9 +317,8 @@ class _$_SuperHero implements _SuperHero {
             (identical(other.connections, connections) ||
                 const DeepCollectionEquality()
                     .equals(other.connections, connections)) &&
-            (identical(other.imageUrl, imageUrl) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageUrl, imageUrl)));
+            (identical(other.images, images) ||
+                const DeepCollectionEquality().equals(other.images, images)));
   }
 
   @override
@@ -320,7 +332,7 @@ class _$_SuperHero implements _SuperHero {
       const DeepCollectionEquality().hash(biography) ^
       const DeepCollectionEquality().hash(work) ^
       const DeepCollectionEquality().hash(connections) ^
-      const DeepCollectionEquality().hash(imageUrl);
+      const DeepCollectionEquality().hash(images);
 
   @override
   _$SuperHeroCopyWith<_SuperHero> get copyWith =>
@@ -337,7 +349,7 @@ abstract class _SuperHero implements SuperHero {
       @required Biography biography,
       @required Work work,
       @required Connections connections,
-      @required String imageUrl}) = _$_SuperHero;
+      @required Images images}) = _$_SuperHero;
 
   @override
   int get id;
@@ -356,7 +368,7 @@ abstract class _SuperHero implements SuperHero {
   @override
   Connections get connections;
   @override
-  String get imageUrl;
+  Images get images;
   @override
   _$SuperHeroCopyWith<_SuperHero> get copyWith;
 }

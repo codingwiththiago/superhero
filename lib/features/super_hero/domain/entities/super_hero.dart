@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'appearance.dart';
 import 'biography.dart';
 import 'connections.dart';
+import 'images.dart';
 import 'power_stats.dart';
 import 'work.dart';
 
@@ -19,6 +20,6 @@ abstract class SuperHero with _$SuperHero {
     @required Biography biography,
     @required Work work,
     @required Connections connections,
-    @required String imageUrl,
+    @required Images images,
   }) = _SuperHero;
 }

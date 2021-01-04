@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'core/navigation/router.dart';
+import 'core/navigation/routes.dart';
+import 'core/utils/app_strings.dart';
 import 'dependency_injection.dart' as di;
 
 Future<void> main() async {
@@ -8,15 +11,17 @@ Future<void> main() async {
 }
 
 class App extends StatelessWidget {
+  final _router = AppRouter();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: AppStrings.title,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Container(),
+      onGenerateRoute: _router.generateRoutes,
+      initialRoute: Routes.splashPage,
     );
   }
 }

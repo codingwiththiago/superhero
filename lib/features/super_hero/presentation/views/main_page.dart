@@ -19,7 +19,7 @@ class MainPage extends StatelessWidget {
       listener: (context, state) {
         switch (state.status) {
           case (SuperHeroStatus.results):
-            Navigator.of(context).pushReplacementNamed(Routes.resultsPage);
+            Navigator.of(context).pushNamed(Routes.resultsPage);
             break;
           default:
             break;
@@ -43,7 +43,9 @@ class MainPage extends StatelessWidget {
   Widget _drawScreen(BuildContext context, SuperHeroState state) {
     final _bloc = BlocProvider.of<SuperHeroBloc>(context);
     switch (state.status) {
-      case SuperHeroStatus.ready:
+      case SuperHeroStatus.initial:
+        return StyledLoadingProgress();
+      default:
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -75,21 +77,21 @@ class MainPage extends StatelessWidget {
             ),
             SizedBox(height: 16),
             StyledMainItem(
-              icon: AppImages.femaleHero,
+              icon: Image.asset(AppImages.femaleHero),
               color: AppColors.lightPrimary,
               title: AppStrings.mainFemaleItem,
               onTap: () => _bloc.add(SuperHeroEvent.showHeroesByGender(GenderType.female())),
             ),
             SizedBox(height: 10),
             StyledMainItem(
-              icon: AppImages.maleHero,
+              icon: Image.asset(AppImages.maleHero),
               color: AppColors.lightPrimary,
               title: AppStrings.mainMaleItem,
               onTap: () => _bloc.add(SuperHeroEvent.showHeroesByGender(GenderType.male())),
             ),
             SizedBox(height: 10),
             StyledMainItem(
-              icon: AppImages.genderlessHero,
+              icon: Image.asset(AppImages.genderlessHero),
               color: AppColors.lightPrimary,
               title: AppStrings.mainOtherItem,
               onTap: () => _bloc.add(SuperHeroEvent.showHeroesByGender(GenderType.other())),
@@ -101,29 +103,27 @@ class MainPage extends StatelessWidget {
             ),
             SizedBox(height: 16),
             StyledMainItem(
-              icon: AppImages.goodHero,
+              icon: Image.asset(AppImages.goodHero),
               color: AppColors.primary,
               title: AppStrings.mainGoodItem,
               onTap: () => _bloc.add(SuperHeroEvent.showHeroesByAlignment(AlignmentType.good())),
             ),
             SizedBox(height: 10),
             StyledMainItem(
-              icon: AppImages.badHero,
+              icon: Image.asset(AppImages.badHero),
               color: AppColors.primary,
               title: AppStrings.mainBadItem,
               onTap: () => _bloc.add(SuperHeroEvent.showHeroesByAlignment(AlignmentType.bad())),
             ),
             SizedBox(height: 10),
             StyledMainItem(
-              icon: AppImages.neutralHero,
+              icon: Image.asset(AppImages.neutralHero),
               color: AppColors.primary,
               title: AppStrings.mainNeutralItem,
               onTap: () => _bloc.add(SuperHeroEvent.showHeroesByAlignment(AlignmentType.neutral())),
             ),
           ],
         );
-      default:
-        return StyledLoadingProgress();
     }
   }
 }

@@ -31,7 +31,8 @@ class SuperHeroBloc extends Bloc<SuperHeroEvent, SuperHeroState> {
         );
       },
       showHeroesByGender: (genderType) async* {
-        var filteredList = state.allHeroes.where((i) => i.appearance.gender.runtimeType == genderType).toList();
+        var filteredList =
+            state.allHeroes.where((i) => i.appearance.gender.runtimeType == genderType.runtimeType).toList();
         yield state.copyWith(
           status: SuperHeroStatus.results,
           filteredHeroes: filteredList,
@@ -39,7 +40,8 @@ class SuperHeroBloc extends Bloc<SuperHeroEvent, SuperHeroState> {
         );
       },
       showHeroesByAlignment: (alignmentType) async* {
-        var filteredList = state.allHeroes.where((i) => i.biography.alignment.runtimeType == alignmentType).toList();
+        var filteredList =
+            state.allHeroes.where((i) => i.biography.alignment.runtimeType == alignmentType.runtimeType).toList();
         yield state.copyWith(
           status: SuperHeroStatus.results,
           filteredHeroes: filteredList,

@@ -17,4 +17,6 @@ class AppStrings {
   static const mainGoodItem = 'Good heroes';
   static const mainBadItem = 'Bad heroes';
   static const mainNeutralItem = 'Neutral heroes';
+
+  static const resultsEmpty = 'Looks like Thanos \'handled\' your results...';
 }

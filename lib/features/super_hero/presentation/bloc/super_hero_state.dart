@@ -25,11 +25,11 @@ class SuperHeroState {
     String message,
   }) {
     return SuperHeroState(
-      status: status ?? null,
-      allHeroes: allHeroes ?? null,
-      filteredHeroes: filteredHeroes ?? null,
-      selectedHero: selectedHero ?? null,
-      message: message ?? null,
+      status: status ?? this.status,
+      allHeroes: allHeroes ?? this.allHeroes,
+      filteredHeroes: filteredHeroes ?? this.filteredHeroes,
+      selectedHero: selectedHero ?? this.selectedHero,
+      message: message ?? this.message,
     );
   }
 }

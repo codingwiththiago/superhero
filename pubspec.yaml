@@ -22,6 +22,7 @@ dependencies:
   google_fonts: ^1.1.1
   http: ^0.12.2
   json_serializable: ^3.5.1
+  transparent_image: ^1.0.0
 
 dev_dependencies:
   flutter_test:

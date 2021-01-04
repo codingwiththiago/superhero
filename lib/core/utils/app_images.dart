@@ -7,4 +7,5 @@ class AppImages {
   static const goodHero = 'assets/images/wolverine.png';
   static const badHero = 'assets/images/magneto.png';
   static const neutralHero = 'assets/images/deadpool.png';
+  static const empty = 'assets/images/empty.svg';
 }

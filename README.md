@@ -20,7 +20,11 @@ A simple app to demonstrate Clean Architecture my way.
 
 ## Screenshots
 
-- [Soon] 
+<p>
+  <img src="https://raw.githubusercontent.com/codingwiththiago/superhero/main/assets/screenshots/home.png" alt="Screen 1" width="250">
+  <img src="https://raw.githubusercontent.com/codingwiththiago/superhero/main/assets/screenshots/results.png" alt="Screen 2" width="250">
+  <img src="https://raw.githubusercontent.com/codingwiththiago/superhero/main/assets/screenshots/hero.png" alt="Screen 3" width="250">
+</p>
 
 ## Thanks
 - Special thanks to [Yoann Cribier](https://github.com/akabab) for creating [superhero-api](https://github.com/akabab/superhero-api), a great API to find informations about popular heroes.

@@ -17,7 +17,7 @@ class AppRouter {
       case Routes.splashPage:
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(
-            value: _superHeroBloc,
+            value: _superHeroBloc..add(SuperHeroEvent.loadingAllHeroes()),
             child: SplashPage(),
           ),
         );

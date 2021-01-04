@@ -19,7 +19,7 @@ Future<void> init() async {
 
   //! Feature: Super Hero
   // Bloc
-  sl.registerFactory(() => SuperHeroBloc(sl()));
+  sl.registerLazySingleton(() => SuperHeroBloc(sl()));
 
   // Use Cases
   sl.registerLazySingleton(() => GetAllHeroes(sl()));

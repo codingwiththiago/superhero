@@ -21,9 +21,9 @@ A simple app to demonstrate Clean Architecture my way.
 ## Screenshots
 
 <p>
-  <img src="https://raw.githubusercontent.com/codingwiththiago/superhero/main/assets/screenshots/home.png" alt="Screen 1" width="250">
-  <img src="https://raw.githubusercontent.com/codingwiththiago/superhero/main/assets/screenshots/results.png" alt="Screen 2" width="250">
-  <img src="https://raw.githubusercontent.com/codingwiththiago/superhero/main/assets/screenshots/hero.png" alt="Screen 3" width="250">
+  <img src="https://github.com/codingwiththiago/superhero/blob/main/assets/screenshots/home.jpeg" alt="Screen 1" width="250">
+  <img src="https://github.com/codingwiththiago/superhero/blob/main/assets/screenshots/home.jpeg" alt="Screen 2" width="250">
+  <img src="https://github.com/codingwiththiago/superhero/blob/main/assets/screenshots/home.jpeg" alt="Screen 3" width="250">
 </p>
 
 ## Thanks

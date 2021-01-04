@@ -19,4 +19,23 @@ class AppStrings {
   static const mainNeutralItem = 'Neutral heroes';
 
   static const resultsEmpty = 'Looks like Thanos \'handled\' your results...';
+  static const resultsName = 'Search by name';
+  static const resultsMale = 'Male heroes';
+  static const resultsFemale = 'Female heroes';
+  static const resultsGenderless = 'Genderless heroes';
+  static const resultsGood = 'Good heroes';
+  static const resultsBad = 'Bad heroes';
+  static const resultsNeutral = 'Neutral heroes';
+
+  static const heroGender = 'Gender';
+  static const heroAlignment = 'Alignment';
+  static const heroHeight = 'Height';
+  static const heroStats = 'Stats:';
+
+  static const heroIntelligence = 'Intelligence: ';
+  static const heroStrength = 'Strength: ';
+  static const heroSpeed = 'Speed: ';
+  static const heroDurability = 'Durability: ';
+  static const heroPower = 'Power: ';
+  static const heroCombat = 'Combat: ';
 }

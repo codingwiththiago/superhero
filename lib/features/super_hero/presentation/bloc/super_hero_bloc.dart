@@ -53,7 +53,7 @@ class SuperHeroBloc extends Bloc<SuperHeroEvent, SuperHeroState> {
         yield state.copyWith(
           status: SuperHeroStatus.results,
           filteredHeroes: filteredList,
-          message: 'Busca por nome',
+          message: AppStrings.resultsName,
         );
       },
       showHeroInfo: (id) async* {
@@ -76,18 +76,18 @@ class SuperHeroBloc extends Bloc<SuperHeroEvent, SuperHeroState> {
 
   String _mapGenderToMessage(GenderType genderType) {
     return genderType.when(
-      male: () => 'Herois do sexo masculino',
-      female: () => 'Herois do sexo feminino',
-      other: () => 'Herois sem sexo definido',
+      male: () => AppStrings.resultsMale,
+      female: () => AppStrings.resultsFemale,
+      other: () => AppStrings.resultsGenderless,
     );
   }
 
   String _mapAlignmentToMessage(AlignmentType alignmentType) {
     return alignmentType.when(
-      good: () => 'Herois do bem',
-      bad: () => 'Herois do mal',
-      neutral: () => 'Herois neutros',
-      unknown: () => 'Demais herois',
+      good: () => AppStrings.resultsGood,
+      bad: () => AppStrings.resultsBad,
+      neutral: () => AppStrings.resultsNeutral,
+      unknown: () => AppStrings.resultsNeutral,
     );
   }
 }

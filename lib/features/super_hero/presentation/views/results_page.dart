@@ -21,7 +21,7 @@ class ResultsPage extends StatelessWidget {
         listener: (context, state) {
           switch (state.status) {
             case SuperHeroStatus.heroInfo:
-              Navigator.of(context).pushReplacementNamed(Routes.heroPage);
+              Navigator.of(context).pushNamed(Routes.heroPage);
               break;
             case SuperHeroStatus.error:
               StyledSnackbar(context).showError(state.message);
@@ -30,6 +30,7 @@ class ResultsPage extends StatelessWidget {
               break;
           }
         },
+        buildWhen: (previous, current) => current.status == SuperHeroStatus.results,
         builder: (context, state) {
           return Scaffold(
             appBar: AppBar(
@@ -43,7 +44,7 @@ class ResultsPage extends StatelessWidget {
               elevation: 0.0,
             ),
             body: Container(
-              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+              padding: EdgeInsets.only(left: 24, right: 24, top: 16),
               child: _buildScreen(context, state),
             ),
           );

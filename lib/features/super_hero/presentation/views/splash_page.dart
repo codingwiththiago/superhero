@@ -9,14 +9,22 @@ import '../../../../core/utils/app_images.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../bloc/super_hero_bloc.dart';
 import '../widgets/styled_animated_loading.dart';
+import '../widgets/styled_snackbar.dart';
 
 class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocListener<SuperHeroBloc, SuperHeroState>(
       listener: (context, state) {
-        if (state.status == SuperHeroStatus.ready) {
-          Navigator.of(context).pushReplacementNamed(Routes.mainPage);
+        switch (state.status) {
+          case (SuperHeroStatus.ready):
+            Navigator.of(context).pushReplacementNamed(Routes.mainPage);
+            break;
+          case (SuperHeroStatus.error):
+            StyledSnackbar(context).showError(state.message);
+            break;
+          default:
+            break;
         }
       },
       child: Scaffold(

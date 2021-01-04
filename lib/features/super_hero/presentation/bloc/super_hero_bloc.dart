@@ -47,7 +47,7 @@ class SuperHeroBloc extends Bloc<SuperHeroEvent, SuperHeroState> {
         );
       },
       searchHeroes: (name) async* {
-        var filteredList = state.allHeroes.where((i) => i.name.contains(name)).toList();
+        var filteredList = state.allHeroes.where((i) => i.name.toLowerCase().contains(name.toLowerCase())).toList();
         yield state.copyWith(
           status: SuperHeroStatus.results,
           filteredHeroes: filteredList,

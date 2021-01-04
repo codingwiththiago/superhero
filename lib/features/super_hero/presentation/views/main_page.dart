@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../../core/navigation/routes.dart';
+import '../../../../core/types/alignment_type.dart';
+import '../../../../core/types/gender_type.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/utils/app_strings.dart';
@@ -12,14 +15,23 @@ import '../widgets/styled_main_item.dart';
 class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<SuperHeroBloc, SuperHeroState>(
+    return BlocConsumer<SuperHeroBloc, SuperHeroState>(
+      listener: (context, state) {
+        switch (state.status) {
+          case (SuperHeroStatus.results):
+            Navigator.of(context).pushReplacementNamed(Routes.resultsPage);
+            break;
+          default:
+            break;
+        }
+      },
       builder: (context, state) {
         return SafeArea(
           child: Scaffold(
             body: SingleChildScrollView(
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 24, vertical: 32),
-                child: _drawScreen(state),
+                child: _drawScreen(context, state),
               ),
             ),
           ),
@@ -28,7 +40,8 @@ class MainPage extends StatelessWidget {
     );
   }
 
-  Widget _drawScreen(SuperHeroState state) {
+  Widget _drawScreen(BuildContext context, SuperHeroState state) {
+    final _bloc = BlocProvider.of<SuperHeroBloc>(context);
     switch (state.status) {
       case SuperHeroStatus.ready:
         return Column(
@@ -36,7 +49,7 @@ class MainPage extends StatelessWidget {
           children: [
             Text(
               AppStrings.mainTitle,
-              style: GoogleFonts.roboto(color: AppColors.primaryText, fontWeight: FontWeight.bold, fontSize: 24),
+              style: GoogleFonts.roboto(color: AppColors.primaryText, fontWeight: FontWeight.bold, fontSize: 32),
             ),
             SizedBox(height: 32),
             Container(
@@ -45,17 +58,17 @@ class MainPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(32),
               ),
               child: TextField(
+                textInputAction: TextInputAction.go,
+                onSubmitted: (value) => _bloc.add(SuperHeroEvent.searchHeroes(value)),
+                textAlignVertical: TextAlignVertical.center,
                 decoration: InputDecoration(
                   hintText: AppStrings.mainSearchHint,
-                  prefixIcon: Icon(
-                    Icons.search,
-                    color: AppColors.primaryText,
-                  ),
+                  prefixIcon: Icon(Icons.search, color: AppColors.primaryText),
                   border: InputBorder.none,
                 ),
               ),
             ),
-            SizedBox(height: 64),
+            SizedBox(height: 48),
             Text(
               AppStrings.mainGenderSubmenu,
               style: GoogleFonts.roboto(color: AppColors.primary, fontWeight: FontWeight.bold, fontSize: 16),
@@ -65,21 +78,21 @@ class MainPage extends StatelessWidget {
               icon: AppImages.femaleHero,
               color: AppColors.lightPrimary,
               title: AppStrings.mainFemaleItem,
-              onTap: () {},
+              onTap: () => _bloc.add(SuperHeroEvent.showHeroesByGender(GenderType.female())),
             ),
             SizedBox(height: 10),
             StyledMainItem(
               icon: AppImages.maleHero,
               color: AppColors.lightPrimary,
               title: AppStrings.mainMaleItem,
-              onTap: () {},
+              onTap: () => _bloc.add(SuperHeroEvent.showHeroesByGender(GenderType.male())),
             ),
             SizedBox(height: 10),
             StyledMainItem(
               icon: AppImages.genderlessHero,
               color: AppColors.lightPrimary,
               title: AppStrings.mainOtherItem,
-              onTap: () {},
+              onTap: () => _bloc.add(SuperHeroEvent.showHeroesByGender(GenderType.other())),
             ),
             SizedBox(height: 32),
             Text(
@@ -91,21 +104,21 @@ class MainPage extends StatelessWidget {
               icon: AppImages.goodHero,
               color: AppColors.primary,
               title: AppStrings.mainGoodItem,
-              onTap: () {},
+              onTap: () => _bloc.add(SuperHeroEvent.showHeroesByAlignment(AlignmentType.good())),
             ),
             SizedBox(height: 10),
             StyledMainItem(
               icon: AppImages.badHero,
               color: AppColors.primary,
               title: AppStrings.mainBadItem,
-              onTap: () {},
+              onTap: () => _bloc.add(SuperHeroEvent.showHeroesByAlignment(AlignmentType.bad())),
             ),
             SizedBox(height: 10),
             StyledMainItem(
               icon: AppImages.neutralHero,
               color: AppColors.primary,
               title: AppStrings.mainNeutralItem,
-              onTap: () {},
+              onTap: () => _bloc.add(SuperHeroEvent.showHeroesByAlignment(AlignmentType.neutral())),
             ),
           ],
         );

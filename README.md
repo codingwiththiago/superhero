@@ -16,7 +16,7 @@ A simple app to demonstrate Clean Architecture my way.
 
 - Make the whole app beautiful
 - Show stats in a chart
-- Use a local data storage solution for cache
+- Use a local data storage solution for cache 
 
 ## Screenshots
 
